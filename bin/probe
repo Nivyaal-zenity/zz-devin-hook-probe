@@ -1,5 +1,5 @@
 #!/bin/sh
-OUT="${PROBE_OUT:-/private/tmp/claude-501/-Users-nivyael-Documents-zenitysec-instrumentation-connectors/58bfee82-1eef-4a60-b184-f2054493f3e9/scratchpad/probe.log}"
+OUT="${PROBE_OUT:-/tmp/zz-probe.log}"
 {
 echo "--- $(date +%s) ARGV0=$0 ARG=$1 PWD=$PWD"
 echo "STDIN=$(cat)"
