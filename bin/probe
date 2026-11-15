@@ -1,0 +1,14 @@
+#!/bin/sh
+OUT="${PROBE_OUT:-/private/tmp/claude-501/-Users-nivyael-Documents-zenitysec-instrumentation-connectors/58bfee82-1eef-4a60-b184-f2054493f3e9/scratchpad/probe.log}"
+{
+echo "--- $(date +%s) ARGV0=$0 ARG=$1 PWD=$PWD"
+echo "STDIN=$(cat)"
+env | grep -E '^[A-Za-z_]*(PLUGIN|DEVIN|PWD)[A-Za-z_]*=' | sed -E 's/(KEY|TOKEN|SECRET)=.*/\1=<redacted>/'
+} >> "$OUT"
+MODE=$(cat "$(dirname "$0")/mode" 2>/dev/null)
+case "$MODE" in
+exit1) exit 1;;
+exit2) echo blocked >&2; exit 2;;
+hang) sleep 600;;
+esac
+exit 0

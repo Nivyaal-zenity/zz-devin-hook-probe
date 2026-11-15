@@ -1,0 +1,1 @@
+{"SessionStart":[{"hooks":[{"type":"command","command":"\"${CLAUDE_PLUGIN_ROOT}/bin/probe\" start"}]}],"PreToolUse":[{"hooks":[{"type":"command","command":"\"${CLAUDE_PLUGIN_ROOT}/bin/probe\" pretool"}]}]}
